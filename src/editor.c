@@ -14,7 +14,7 @@ void add_line(char ***lines, int *line_count)
     fgets(buffer, MAX_LINE_LENGTH, stdin);
 
     (*line_count)++;
-    *lines = realloc(*lines, sizeof(char) * (*line_count));
+    *lines = realloc(*lines, sizeof(char *) * (*line_count));
     (*lines)[*line_count - 1] = strdup(buffer);
 }
 
@@ -34,7 +34,7 @@ void delete_line(char ***lines, int *line_count)
     free((*lines)[row_number - 1]);
     for (int i = row_number - 1; i < *line_count; i++)
     {
-        lines[i] = lines[i + 1];
+        (*lines)[i] = (*lines)[i + 1];
     }
 
     (*line_count)--;
