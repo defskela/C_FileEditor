@@ -51,5 +51,4 @@ void free_memory(char **lines, int line_count)
     {
         free(lines[i]);
     }
-    return 0;
 }

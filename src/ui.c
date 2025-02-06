@@ -32,6 +32,6 @@ void print_lines(char **lines, int line_count)
     printf("\nТекущий текст\n");
     for (int i = 0; i < line_count; i++)
     {
-        printf("%d. %s\n", i, lines[i]);
+        printf("%d. %s", i, lines[i]);
     }
 }
